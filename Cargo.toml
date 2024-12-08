@@ -3,7 +3,7 @@ name = "escp"
 version = "0.8.0"
 edition = "2018"
 author = "Charles Shiflett <cshiflett@ESnet>"
-authors = [ "Charles Shiflett" ]
+authors = ["Charles Shiflett"]
 about = "Energy Sciences Network transfer tool (EScp)"
 description = "Energy Sciences Network transfer tool (EScp)"
 license = "BSD-3-Clause"
@@ -17,6 +17,7 @@ build = "src/build.rs"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [build-dependencies]
+cmake = "0.1.52"
 libc = "0.*"
 shadow-rs = "0.*"
 
@@ -37,11 +38,11 @@ zstd-safe = "7.*"
 chrono = "0.*"
 
 [profile.release]
-opt-level = 'z'     # Optimize for size
-lto = true          # Enable link-time optimization
-codegen-units = 1   # Reduce number of codegen units to increase optimizations
-panic = 'abort'     # Abort on panic
-strip = true        # Strip symbols from binary*
+opt-level = 'z'   # Optimize for size
+lto = true        # Enable link-time optimization
+codegen-units = 1 # Reduce number of codegen units to increase optimizations
+panic = 'abort'   # Abort on panic
+strip = true      # Strip symbols from binary*
 
 [package.metadata.rpm]
 package = "escp"
